@@ -1,0 +1,160 @@
+Assignment - 1                  A Job Ready Bootcamp in C++, DSA and IOT                             Submission by-Taniya Bhagat
+
+                                                     Input and output in C Language
+
+    1.    Write a program to print Hello Students on the screen.
+
+  Ans. #include<stdio.h>
+           int main()
+           {
+               printf("Hello Students");
+               return 0;
+            }
+
+OUTPUT:
+ Hello Students
+
+    2.    Write a program to print Hello in the first line and Students in the second line.
+
+   Ans. #include<stdio.h>
+           int main()
+           {
+               printf("Hello\nStudents");
+               return 0;
+            }
+
+OUTPUT:
+ Hello 
+ Students
+
+     3.   Write a program to print “MySirG” on the screen. (Remember to print in double quotes)
+   Ans.  #include<stdio.h>
+           int main()
+           {
+               printf("\"MySirG\"");  
+               return 0;
+            }
+
+OUTPUT:
+"MysirG"
+      4.  WAP to find the area of the circle. Take radius of circle from user as input and print the
+result 
+     Ans. #include<stdio.h>
+               int main()
+               {
+                   int r;
+                   float a;
+                   printf("Enter radius of circle : ");
+                   scanf("%d",&r);
+                   a=3.14*r*r;
+                   printf(“Area of circle is %f having the radius %d”,a,r);
+                   return 0;
+               }
+
+OUTPUT:
+Enter radius of circle : 2
+Area of circle is 12.56 having the radius 2
+
+       5.   WAP to calculate the length of String using printf function.
+    Ans.  #include<stdio.h>
+              #include<string.h>
+                 {
+                    char st[10];
+                    printf("Enter string : ");
+                    scanf("%s",st);
+                    printf("Length of string = %d",strlen(st)) ;
+                    return 0;
+                 }
+
+OUTPUT:
+Enter string : Taniya
+Length of string = 6
+
+       6.   WAP to print the name of the user in double quotes.
+     Ans.   #include<stdio.h>
+                 int main()
+                 {
+                   char a[30]="Hello, Amit Kumar";
+                   printf("\"%s\"",a);
+                   return 0;
+                  }
+
+OUTPUT:
+"Hello, Amit kumar"
+
+        7.  WAP to print “%d” on the screen
+      Ans.  #include<stdio.h>
+                int main()
+                  {
+                     printf("%%d"); 
+                     return 0;
+                  }
+
+OUTPUT:
+%d
+
+        8. WAP to print “\n” on the screen.
+        Ans.  #include<stdio.h>
+                int main()
+                  {
+                     printf("\\n"); 
+                     return 0;
+                  }
+
+OUTPUT:
+\n
+        
+        9. WAP to print “\\” on the screen.
+         Ans.  #include<stdio.h>
+                int main()
+                  {
+                     printf("\\\\"); 
+                     return 0;
+                  }
+
+OUTPUT:
+\\
+         10. WAP to take date as an input in below given format and convert the date format and
+              display the result.
+        Ans.  #include <stdio.h>
+                   int main()
+                        {
+                            int dd, mm, yy;
+                            printf("Enter date (dd/mm/yy) format: ");
+                            scanf("%d/%d/%d", &dd, &mm, &yy);
+                            printf("\nDay - %d ,Month - %d , Year - %d", dd, mm, yy);
+                            return 0;
+                         }   
+
+OUTPUT:
+Enter date (dd/mm/yy) format:12/11/2021
+Day - 12 ,Month - 11 , Year - 2021
+
+          11. WAP to take time as an input in below given format and convert the time format                 and display the result.
+         Ans.   #include <stdio.h>
+                    int main()
+                    {
+                        int hh,mm;
+                        printf("Enter time (hh:mm) format: ");
+                        scanf("%d:%d", &hh, &mm);
+                        printf("\n%d Hour %d Minute", hh, mm);
+                        return 0;
+                    }    
+OUTPUT:
+Enter time (hh:mm) format: 10:12
+10 Hour 12 Minute
+
+          12. Find output of below code:
+                 int main()
+                 {
+                       int x = printf(“ineuron”);
+                       printf(“%d”,x);
+                       return 0;
+                 }
+        
+    Ans.  OUTPUT:
+              ineuron7
+
+        
+      
+    
