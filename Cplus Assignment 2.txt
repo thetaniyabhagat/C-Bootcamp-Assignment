@@ -1,4 +1,4 @@
-Assignment - 2               A Job Ready Bootcamp in C++, DSA and            Submission by-Taniya Bhagat
+Assignment - 2               A Job Ready Bootcamp in C++, DSA and  IOT          Submission by-Taniya Bhagat
 
                                                        Operators in C Language
 1. Write a program to print unit digit of a given number
