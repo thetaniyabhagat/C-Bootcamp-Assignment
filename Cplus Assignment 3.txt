@@ -10,6 +10,7 @@ Ans.  #include<stdio.h>
                    printf("\nMySirG");
               }
               return 0;
+            }  
 OUTPUT:
 MySirG
 MySirG
