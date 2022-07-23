@@ -1,6 +1,6 @@
-Assignment - 6 A Job Ready Bootcamp in C++, DSA and IOT   Submission by-Taniya Bhagat
+Assignment - 6                               A Job Ready Bootcamp in C++, DSA and IOT                                         Submission by-Taniya Bhagat
 
-Use any loop
+                                                          Use any loop
 
 1. Write a program to calculate sum of first N natural numbers
 Ans.
@@ -36,11 +36,12 @@ int main()
     {  
         sum += i;  
     }  
-    printf("Sum of all even numbers from 1 to %d: %d", n, sum);  
+    printf("\nSum of all even numbers from 1 to %d: %d", n, sum);  
     return 0;  
 }  
 Output
-
+Enter any number:4
+Sum of all even numbers from 1 to 4:20
 3. Write a program to calculate sum of first N odd natural numbers
 Ans.
 #include <stdio.h>
@@ -59,7 +60,7 @@ void main()
    printf("\nThe Sum of odd Natural Number upto %d terms : %d \n",n,sum);
 }
 
-Sample Output:
+Output:
 
 Input number of terms : 10                                                                                    
                                                                                                               
