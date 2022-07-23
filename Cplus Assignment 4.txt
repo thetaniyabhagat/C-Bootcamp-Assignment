@@ -1,0 +1,226 @@
+Assignment - 3 A Job Ready Bootcamp in C++, DSA and IOT MySirG
+
+Decision Control Statements
+1. Write a program to check whether a given number is positive or non-positive.
+Ans. #include <stdio.h>
+void main()
+{
+    int num;
+ 
+    printf("Input a number :");
+    scanf("%d", &num);
+    if (num >= 0)
+        printf("%d is a positive number \n", num);
+    else
+        printf("%d is a non positive number \n", num);
+}
+Sample Output:
+
+Input a number :15                                                                                            
+15 is a positive number  
+
+2. Write a program to check whether a given number is divisible by 5 or not
+Ans.  #include <stdio.h>
+void main()
+{
+    int num;
+ 
+    printf("Input a number :");
+    scanf("%d", &num);
+    if (num %5== 0)
+        printf("%d is divisible by 5 \n", num);
+    else
+        printf("%d is not divisible by 5 \n", num);
+}
+Sample Output:
+
+Input a number :15                                                                                            
+15 is divisible by 5
+
+3. Write a program to check whether a given number is an even number or an odd
+number.
+ Ans.  #include <stdio.h>
+void main()
+{
+    int num1, rem1;
+ 
+    printf("Input an integer : ");
+    scanf("%d", &num1);
+    rem1 = num1 % 2;
+    if (rem1 == 0)
+     printf("%d is an even integer\n", num1);
+    else
+        printf("%d is an odd integer\n", num1);
+}
+Sample Output:
+
+Input an integer : 15                                                                                         
+15 is an odd integer 
+
+4.  Write a program to check whether a given number is an even number or an odd
+number without using % operator.
+Ans.  #include <stdio.h>
+int main()
+{
+    int number;
+ 
+    printf("Enter a number to check even or odd:");
+    scanf("%d", &number);
+ 
+    if((number & 1)==0)
+          printf("%d is even.", number);
+    else
+        printf("%d is odd.", number);
+        return 0;
+    
+}
+Sample Output:
+Enter a number to check even or odd:101
+101 is idd.
+
+5. Write a program to check whether a given number is a three-digit number or not.
+Ans.  #include <stdio.h>
+int main()
+{
+    int number;
+ 
+    printf("Enter a number ");
+    scanf("%d", &number);
+ 
+    if((number>99)&&(number<1000))
+          printf("%d is three-digit number", number);
+    else
+        printf("%d is not three digit number", number);
+        return 0;
+    
+}
+Sample Output:
+Enter a number:101
+101 is three digit number
+
+6. Write a program to print greater between two numbers. Print one number of both are
+the same.
+Ans. #include <stdio.h>
+int main()
+{
+    int n1,n2;
+ 
+    printf("Enter first number: ");
+    scanf("%d", &n1);
+    printf("Enter second number: ");
+    scanf("%d", &n2);
+ 
+    if((n1>n2)||(n1==n2))
+          printf("%d is greater",n1);
+    else
+        printf("%d is greater",n2);
+        return 0;  
+}
+Sample Output:
+Enter first number:5
+Enter second number:90
+90 is greater
+
+8. Write a program to check whether a given year is a leap year or not.
+Ans.   #include <stdio.h>
+#include <stdbool.h>
+ 
+bool checkYear(int year)
+{
+    if (year % 400 == 0)
+        return true;
+ 
+    if (year % 100 == 0)
+        return false;
+
+    if (year % 4 == 0)
+        return true;
+    return false;
+}
+ 
+int main()
+{
+    int year = 2000;
+ 
+    checkYear(year)? printf("Leap Year"):
+                   printf("Not a Leap Year");
+    return 0;
+}
+Sample Output:
+Leap Year
+
+18. Write a program which takes the month number as an input and display number of
+days in that month
+Ans.  #include <stdio.h>
+void main()
+{
+   int monno;
+   char monnm[15];
+   printf("Input Month No : ");
+   scanf("%d",&monno);
+   switch(monno)
+   {
+	case 1:
+	case 3:
+	case 5:
+	case 7:
+	case 8:
+	case 10:
+	case 12:
+	       printf("Month have 31 days. \n");
+	       break;
+	case 2:
+	       printf("The 2nd month is a February and have 28 days. \n");
+	       printf("in leap year The February month  Have 29 days.\n");
+	       break;
+	case 4:
+	case 6:
+	case 9:
+	case 11:
+	       printf("Month have 30 days. \n");
+	       break;
+default:
+	       printf("invalid Month number.\nPlease try again ....\n");
+	       break;
+      }
+}
+#include <stdio.h>
+void main()
+{
+   int monno;
+   char monnm[15];
+   printf("Input Month No : ");
+   scanf("%d",&monno);
+   switch(monno)
+   {
+	case 1:
+	case 3:
+	case 5:
+	case 7:
+	case 8:
+	case 10:
+	case 12:
+	       printf("Month have 31 days. \n");
+	       break;
+	case 2:
+	       printf("The 2nd month is a February and have 28 days. \n");
+	       printf("in leap year The February month  Have 29 days.\n");
+	       break;
+	case 4:
+	case 6:
+	case 9:
+	case 11:
+	       printf("Month have 30 days. \n");
+	       break;
+default:
+	       printf("invalid Month number.\nPlease try again ....\n");
+	       break;
+      }
+}
+
+Sample Output:
+
+Input Month No : 7                                                                                            
+Month have 31 days.
+
+
