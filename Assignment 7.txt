@@ -1,0 +1,296 @@
+Assignment 7:
+
+1. Write a program to find the Nth term of the Fibonnaci series.
+Ans.  #include<stdio.h>
+int main()
+{
+int n, t1 = 0, t2 = 1, nextTerm = 0, i;
+printf("Enter the n value: ");
+scanf("%d", &n);
+if(n == 0 || n == 1) 
+printf(“%d”, n); 
+else
+nextTerm = t1 + t2;
+for (i = 3; i <= n; ++i)
+{
+t1 = t2;
+t2 = nextTerm;
+nextTerm = t1 + t2;
+}
+printf("%d", t2);
+return 0;
+}
+Output:
+Enter the n value: 3
+1
+2. Write a program to print first N terms of Fibonacci series
+Ans. #include <stdio.h>
+ 
+void main()
+{
+    int fib1 = 0, fib2 = 1, fib3, num, count = 0;
+ 
+    printf("Enter the value of num \n");
+    scanf("%d", &num);
+    printf("First %d FIBONACCI numbers are ...\n", num);
+    printf("%d\n", fib1);
+    printf("%d\n", fib2);
+    count = 2; /* fib1 and fib2 are already used */
+    while (count < num)
+    {
+        fib3 = fib1 + fib2;
+        count++;
+        printf("%d\n", fib3);
+        fib1 = fib2;
+        fib2 = fib3;
+   }
+
+return 0;
+}
+Output:
+Enter the value of num
+15
+First 15 FIBONACCI numbers are ...
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+55
+89
+144
+233
+377
+
+3. Write a program to check whether a given number is there in the Fibonacci
+series or not.
+Ans.  #include <math.h>
+#include <stdbool.h>
+#include <stdio.h>
+ 
+bool isPerfectSquare(int x)
+{
+    int s = sqrt(x);
+    return (s * s == x);
+}
+ 
+bool isFibonacci(int n)
+{
+  
+    return isPerfectSquare(5 * n * n + 4)
+           || isPerfectSquare(5 * n * n - 4);
+}
+ 
+int main()
+{
+    for (int i = 1; i <= 10; i++) {
+        if (isFibonacci(i))
+            printf("%d is a Fibonacci Number \n", i);
+        else
+            printf("%d is a not Fibonacci Number \n", i);
+    }
+    return 0;
+}
+Output:
+1 is a Fibonacci Number
+2 is a Fibonacci Number
+3 is a Fibonacci Number
+4 is a not Fibonacci Number
+5 is a Fibonacci Number
+6 is a not Fibonacci Number
+7 is a not Fibonacci Number
+8 is a Fibonacci Number
+9 is a not Fibonacci Number
+10 is a not Fibonacci Number
+4. Write a program to calculate HCF of two numbers
+Ans.  #include<stdio.h>
+
+int main()
+{
+    int num1 = 36, num2 = 60, hcf = 1;
+    
+    for(int i = 1; i <= num1 || i <= num2; i++) {
+        if(num1 % i == 0 && num2 % i == 0)
+            hcf = i;
+    }
+    
+    printf("The HCF: %d", hcf);
+    
+    return 0;
+}
+Output:
+The HCF: 12
+
+5. Write a program to check whether two given numbers are co-prime
+numbers or not
+Ans.  #include<stdio.h>  
+  
+int coprime(int num1, int num2)  
+{  
+    int min, count, flag = 1;  
+  
+    min = num1 < num2 ? num1 : num2;  
+  
+    for(count = 2; count <= min; count++)  
+    {  
+        if( num1 % count == 0 && num2 % count == 0 )  
+        {  
+            flag = 0;  
+            break;  
+        }  
+    }  
+  
+    return(flag);  
+}  
+  
+int main()  
+{  
+    int n1, n2;  
+  
+    printf("Enter 2 positive numbers\n");  
+    scanf("%d%d", &n1, &n2);  
+  
+    if( coprime(n1, n2) )  
+    {  
+        printf("%d and %d are co-prime numbers.\n", n1, n2);  
+    }  
+    else  
+    {  
+        printf("%d and %d are not co-prime numbers.\n", n1, n2);  
+    }  
+  
+    return 0;  
+}  
+Output:
+Output 1:
+Enter 2 positive numbers
+8
+15
+8 and 15 are co-prime numbers.
+
+6. Write a program to print all Prime numbers under 100#include <stdio.h>
+ Ans.
+int main()
+{
+  int i, a = 1, count; 
+  
+
+  while(a <= 100)
+  {
+    count = 0;
+    i = 2;
+    while(i <= a/2)
+    {
+      if(a%i == 0)
+      {
+        count++;
+	break;
+      }
+      i++;	
+    }	
+    if(count == 0 && a != 1 )
+    {
+	printf(" %d ", a);
+    }
+    a++; 
+  }
+  return 0;
+}
+Output:
+2  3  5  7  11  13  17  19  23  29  31  37  41  43  47  53  59  61  67  71  73  79  83 
+7. Write a program to print all Prime numbers between two given numbers
+Ans.  #include <stdio.h>
+int main(){
+   int number1,number2,i,j,flag;
+   printf("enter the two intervals:");
+   scanf("%d %d",&number1,&number2);
+   printf("prime no’s present in between %d and %d:",number1,number2);
+   for(i=number1+1;i<number2;i++){// interval between two numbers
+      flag=0;
+      for(j=2;j<=i/2;++j){ //checking number is prime or not
+         if(i%j==0){
+            flag=1;
+            break;
+         }
+      }
+      if(flag==0)
+         printf("%d\n",i);
+   }
+   return 0;
+}
+Output:
+enter the two intervals:10 50
+the number of prime numbers present in between 10 and 50:11
+13
+17
+19
+23
+29
+31
+37
+41
+43
+47
+
+9. Write a program to check whether a given number is an Armstrong number
+or not
+Ans.  #include<stdio.h>  
+ int main()    
+{    
+int n,r,sum=0,temp;    
+printf("enter the number=");    
+scanf("%d",&n);    
+temp=n;    
+while(n>0)    
+{    
+r=n%10;    
+sum=sum+(r*r*r);    
+n=n/10;    
+}    
+if(temp==sum)    
+printf("armstrong  number ");    
+else    
+printf("not armstrong number");    
+return 0;  
+}   
+Output:
+enter the number=153
+armstrong number
+
+enter the number=5
+not armstrong number
+
+
+10. Write a program to print all Armstrong numbers under 1000
+Ans.  #include<stdio.h> 
+#include<conio.h> 
+int main( ) 
+{ 
+int no, temp, rem, sum,count=0; 
+clrscr( ); 
+printf("Armstrong numbers between 1 and 1000 are:\n"); 
+for(no=1; no<=1000; no++) 
+{ 
+temp=no; 
+sum=0; 
+while(temp>0) 
+{ 
+rem=temp%10; 
+sum=sum+(rem*rem*rem); 
+temp=temp/10; 
+} 
+if(no==sum) 
+{ 
+printf("\n%d", no); 
+count++; 
+} 
+} 
+printf("%d",count); 
+getch( ); 
+return 0; 
+} 
