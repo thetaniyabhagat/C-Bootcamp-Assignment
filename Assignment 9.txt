@@ -1,0 +1,375 @@
+Assignment - 9 A Job Ready Bootcamp in C++, DSA and IOT MySirG
+
+Switch Case Problems
+
+1. Write a program which takes the month number as an input and display
+number of days in that month.
+Ans.  
+#include <stdio.h>
+  
+void printNumberOfDays(int N)
+{
+  
+    switch (N) {
+    // Cases for 31 Days
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
+        printf("31 Days.");
+        break;
+  
+    // Cases for 30 Days
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+        printf("30 Days.");
+        break;
+  
+    // Case for 28/29 Days
+    case 2:
+        printf("28/29 Days.");
+        break;
+  
+    default:
+        printf("Invalid Month.");
+        break;
+    }
+}
+  
+// Driver Code
+int main()
+{
+    // Input Month
+    int N = 4;
+  
+    // Function Call
+    printNumberOfDays(N);
+  
+    return 0;
+}
+Output:
+30 Days.
+
+2. Write a menu driven program with the following options:
+a. Addition
+b. Subtraction
+c. Multiplication
+d. Division
+e. Exit
+Ans  #include<stdio.h>
+#include<conio.h>
+int main()
+{
+int a,b,c,d,e,f,ch;
+printf("Enter 1st no:");
+scanf("%d",&a);
+printf("Enter 2nd no:");
+scanf("%d",&b);
+printf("Enter choice 1.add 2.sub 3.mul 4.div 5.Exit\n");
+scanf("%d",&ch);
+switch(ch)
+{
+case 1:
+c=a+b;
+printf("%d",c);
+break;
+case 2:
+d=a-b;
+printf("%d",d);
+break;
+case 3:
+e=a*b;
+printf("%d",e);
+break;
+case 4:
+f=a/b;
+printf("%d",f);
+break;
+case 5:
+exit();
+break;
+}
+return 0;
+}
+Output:
+Enter 1st no:2
+Enter 2nd no:3
+Enter choice 1.add 2.sub 3.mul 4.div 5.Exit
+1
+5
+
+
+3. Write a program which takes the day number of a week and displays a
+unique greeting message for the day.
+Ans.  #include <stdio.h>
+
+int main()
+{
+  int weekday;
+  printf(" Please Enter the Day Number 1 to 7 (Consider 1= Monday, and 7 = Sunday) :  ");
+  scanf("%d", &weekday);
+  
+  if (weekday == 1)
+  {
+  	printf("\n Today is Monday\n Happy Monday");  	
+  }
+  else if ( weekday == 2 )
+  {
+  	printf("\n Today is Tuesday\n Happy Tuesday");  	
+  }  
+  else if ( weekday == 3 )
+  {
+  	printf("\n Today is Wednesday\n Happy Wednesday");  	
+  } 
+  else if ( weekday == 4 )
+  {
+  	printf("\n Today is Thursday\n Happy Thursday");  	
+  } 
+  else if ( weekday == 5 )
+  {
+  	printf("\n Today is Friday\n Happy Friday");  	
+  } 
+  else if ( weekday == 6 )
+  {
+  	printf("\n Today is Saturday\n Happy Saturday");  	
+  }   
+  else if ( weekday == 7 )
+  {
+  	printf("\n Today is Sunday");  	
+  } 
+  else
+    printf("\n Please enter Valid Number between 1 to 7");
+  
+  return 0;
+}
+Output:
+Please Enter the Day Number 1 to 7 (Consider 1= Monday, and 7 = Sunday) :  5
+
+ Today is Friday
+ Happy Friday
+
+6. Program to check whether a year is a leap year or not. Using switch
+statement
+Ans. #include<stdio.h>
+int main()
+{
+   int year, remainder;
+
+   printf("Enter Year: ");
+   scanf("%d",&year);
+
+   remainder=((year%4==0)&&((year%400==0)||(year%100!=0)));
+
+   switch(remainder)
+   {
+
+   case 1:
+     printf("Leap Year");
+     break;
+
+   case 0:
+     printf("Not Leap Year");
+     break;
+
+   default:
+     printf("Invalid");
+     break;
+
+   }
+
+   return 0;
+}
+Output:
+Enter Year: 2020
+Leap Year
+
+
+7. Program to take the value from the user as input electricity unit charges
+and calculate total electricity bill according to the given condition . Using
+the switch statement.
+For the first 50 units Rs. 0.50/unit
+For the next 100 units Rs. 0.75/unit
+For the next 100 units Rs. 1.20/unit
+For units above 250 Rs. 1.50/unit
+An additional surcharge of 20% is added to the bill.
+Ans.   #include<stdio.h>
+int main()
+{
+	int unit;
+	float amount,total_amount,s_charge;
+	printf("enter the number of units you consumed");
+	scanf("%d",&unit);
+	switch(unit<=50)
+	{
+		case 1:
+			amount=unit*0.50;
+			break;
+			case 0:
+				switch(unit<=150)
+				{
+					case 1:
+						amount=25+(unit-50)*0.75;
+						break;
+						case 0:
+							switch(unit<=250)
+							{
+								case 1:
+								amount=100+(unit-150)*1.20	;
+								break;
+								case 0:
+								amount=220+(unit-250)*1.50;
+								break;
+							}
+						break;	
+				}
+			break;	
+	}
+	s_charge=amount*0.20;
+	total_amount=amount+s_charge;
+	printf("your total bill is Rs",total_amount);
+}
+Output:
+enter the number of units you consumed
+100
+your total bill is Rs 75
+
+8. Program to convert a positive number into a negative number and negative
+number into a positive number using a switch statement.
+Ans.  #include<stdio.h>
+#include<conio.h>
+int main()
+{
+	float number;
+	int choice;
+	printf("Select 1, for Negative to positive");
+	printf("Select 2, for positive to negative");
+	scanf("%d",&choice);
+	switch(choice)
+	{
+		case 1:
+			printf("Enter a Negative number");
+			scanf("%d",&number);
+				number=number*(-1);
+				printf("the Positive form of the number is");
+				printf("%d",number);
+			break;
+		case 2:
+			cout<<"Enter a Positive number"<<endl;
+			scanf("%d",&number);
+		
+				number=number*(-1);
+				printf("Negative form of the number is");
+				printf("%d",number);
+		    break;
+		default:
+		    printf("Invalid Input, or Characters entered");		
+	}
+}
+Output
+
+Select 1, for Negative to positive
+Select 2, for positive to negative
+
+1
+
+Enter a Negative number
+
+-6
+
+the positive form of the number is
+
+6
+9. Program to Convert even number into its upper nearest odd number
+Switch Statement.
+Ans 
+          #include<stdio>
+#include<conio.h>
+int main()
+{
+	int number,choice;
+	printf("Enter a number to be roundoff, to nearest odd or even");
+	scanf("%d",number);
+	switch(number%2==0)
+	{
+		case 1:
+			printf("Rounded off to nearest upper odd");
+			printf("%d",number+1);
+			break;
+		case 0:
+			printf("Rounded off to nearest lower even");
+			printf("%d",number-1);
+			break;
+	}
+return 0;
+}
+Output:
+Enter a number to be roundoff, to nearest odd or even
+
+2.7
+
+Rounded off to nearest upper odd
+
+3
+
+10. C program to find all roots of a quadratic equation using switch case
+Ans.  #include <stdio.h>
+#include <math.h> /* Used for sqrt() */
+
+int main()
+{
+    float a, b, c;
+    float root1, root2, imaginary;
+    float discriminant;
+
+    printf("Enter values of a, b, c of quadratic equation (aX^2 + bX + c): ");
+    scanf("%f%f%f", &a, &b, &c);
+
+    /* Calculate discriminant */
+    discriminant = (b * b) - (4 * a * c);
+
+
+    /* Compute roots of quadratic equation based on the nature of discriminant */
+    switch(discriminant > 0)
+    {
+        case 1:
+            /* If discriminant is positive */
+            root1 = (-b + sqrt(discriminant)) / (2 * a);
+            root2 = (-b - sqrt(discriminant)) / (2 * a);
+
+            printf("Two distinct and real roots exists: %.2f and %.2f", 
+                    root1, root2);
+            break;
+
+        case 0:
+            /* If discriminant is not positive */
+            switch(discriminant < 0)
+            {
+                case 1:
+                    /* If discriminant is negative */
+                    root1 = root2 = -b / (2 * a);
+                    imaginary = sqrt(-discriminant) / (2 * a);
+
+                    printf("Two distinct complex roots exists: %.2f + i%.2f and %.2f - i%.2f", 
+                            root1, imaginary, root2, imaginary);
+                    break;
+
+                case 0:
+                    /* If discriminant is zero */
+                    root1 = root2 = -b / (2 * a);
+
+                    printf("Two equal and real roots exists: %.2f and %.2f", root1, root2);
+
+                    break;
+            }
+    }
+
+    return 0;
+}
+Output:
+Enter values of a, b, c of quadratic equation (aX^2 + bX + c): 4 -2 -10
+Two distinct and real roots exists: 1.85 and -1.35
