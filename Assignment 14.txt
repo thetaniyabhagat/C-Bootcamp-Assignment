@@ -1,0 +1,362 @@
+Assignment - 14 A Job Ready Bootcamp in C++, DSA and IOT MySirG
+
+Array in C Language
+
+1. Write a program to calculate the sum of numbers stored in an array of size 10. Take
+array values from the user.
+Ans. #include <stdio.h> 
+ 
+int main() { 
+  int intArray[10]; 
+  int sum = 0, i; 
+ 
+  for(i=0; i<10; i++) { 
+    printf( "Enter number : " ); 
+    scanf( "%d", &intArray[i] ); 
+    sum += intArray[i]; 
+  } 
+ 
+  printf( "Total is %d\n", sum ); 
+ 
+  return 0; 
+} 
+2. Write a program to calculate the average of numbers stored in an array of size 10.
+Take array values from the user.
+Ans.  #include <stdio.h>
+
+int main() {
+   int array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+   int sum, loop;
+   float avg;
+
+   sum = avg = 0;
+   
+   for(loop = 0; loop < 10; loop++) {
+      sum = sum + array[loop];
+   }
+   
+   avg = (float)sum / loop;
+   printf("Average of array values is %.2f", avg);   
+   
+   return 0;
+}
+The output should look like this −
+
+Average of array values is 4.50
+
+3. Write a program to calculate the sum of all even numbers and sum of all odd
+numbers, which are stored in an array of size 10. Take array values from the user.
+Ans.  #include <stdio.h>
+ 
+void main()
+{
+    int i, num, odd_sum = 0, even_sum = 0;
+ 
+    printf("Enter the value of num\n");
+    scanf("%d", &num);
+    for (i = 1; i <= num; i++)
+    {
+        if (i % 2 == 0)
+            even_sum = even_sum + i;
+        else
+            odd_sum = odd_sum + i;
+    }
+    printf("Sum of all odd numbers  = %d\n", odd_sum);
+    printf("Sum of all even numbers = %d\n", even_sum);
+}
+Output:
+Enter the value of num
+10
+Sum of all odd numbers  = 25
+Sum of all even numbers = 30
+
+4. Write a program to find the greatest number stored in an array of size 10. Take array
+values from the user.
+Ans.   #include <stdio.h>
+  int main() {
+    int a[10];
+    int i;
+    int greatest;
+    printf("Enter ten values:");
+    //Store 10 numbers in an array
+    for (i = 0; i < 10; i++) {
+        scanf("%d", &a[i]);
+    }
+    //Assume that a[0] is greatest
+    greatest = a[0];
+    for (i = 0; i < 10; i++) {
+        if (a[i] > greatest) {
+        greatest = a[i];
+    }
+    }
+    printf("
+    Greatest of ten numbers is %d", greatest);
+    return 0;
+  }
+Enter ten values: 2 53 65 3 88 8 14 5 77 64 Greatest of ten numbers is 88
+
+5. Write a program to find the smallest number stored in an array of size 10. Take array
+values from the user.
+Ans.   #include<stdio.h>
+int main()
+{
+  int a[10], Size, i, Smallest, Position;
+  
+  printf("\nPlease Enter the size of an array \n");
+  scanf("%d",&Size);
+
+  printf("\nPlease Enter %d elements of an array: \n", Size);
+  for(i=0; i<Size; i++)
+   {
+   	 scanf("%d",&a[i]);
+   }   
+
+  Smallest = a[0];
+  for(i=1; i<Size; i++)
+   {
+    if(Smallest > a[i])
+     {
+       Smallest = a[i];
+       Position = i;
+	 }   
+   }
+  
+  printf("\nSmallest element in an Array = %d", Smallest);
+  printf("\nIndex position of the Smallest element = %d", Position);
+  
+  return 0;
+}
+
+6. Write a program to sort elements of an array of size 10. Take array values from the
+user.
+Ans.   #include <stdio.h>
+void main (){
+   int num[20];
+   int i, j, a, n;
+   printf("enter number of elements in an array\n");
+   scanf("%d", &n);
+   printf("Enter the elements\n");
+   for (i = 0; i < n; ++i)
+      scanf("%d", &num[i]);
+   for (i = 0; i < n; ++i){
+      for (j = i + 1; j < n; ++j){
+         if (num[i] > num[j]){
+            a = num[i];
+            num[i] = num[j];
+            num[j] = a;
+         }
+      }
+   }
+   printf("The numbers in ascending order is:\n");
+   for (i = 0; i < n; ++i){
+      printf("%d\n", num[i]);
+   }
+}
+Output
+When the above program is executed, it produces the following result −
+
+enter number of elements in an array
+5
+Enter the elements
+12
+23
+89
+11
+22
+The numbers in ascending order is:
+11
+12
+22
+23
+89
+7. Write a program to find second largest in an array.Take array values from the user.
+Ans. #include <stdio.h>
+#include <limits.h>
+ 
+int main()
+{
+	int arr[50], i, Size;
+	int first, second;
+	
+	printf("\n Please Enter the Number of elements in an array  :  ");
+	scanf("%d", &Size);
+	
+	printf("\n Please Enter %d elements of an Array \n", Size);
+	for (i = 0; i < Size; i++)
+	{
+		scanf("%d", &arr[i]);
+    }
+	 
+	first = second = INT_MIN;  
+	   
+	for (i = 0; i < Size; i++)
+	{
+		if(arr[i] > first)
+		{
+			second = first;
+			first = arr[i];
+		}
+		else if(arr[i] > second && arr[i] < first)
+		{
+			second = arr[i];
+		}	
+	}
+	printf("\n The Largest Number in this Array =  %d", first);
+	printf("\n The Second Largest Number in this Array =  %d", second);
+	
+	return 0;
+}
+
+8. Write a program to find the second smallest number in an array.Take array values
+from the user.
+Ans.   #include <stdio.h>
+#include <string.h>
+ 
+main()
+{
+    int smallest, secondsmallest;
+    int array[100], size, i;
+    printf("\n How many elements do you want to enter: ");
+    scanf("%d", &size);
+    printf("\nEnter %d elements: ", size);
+    for (i = 0 ; i < size; i++)
+        scanf("%d", &array[i]);
+    if (array[0] < array[1]) {
+        smallest = array[0];
+        secondsmallest = array[1];
+    }
+    else {
+      smallest = array[1];
+      secondsmallest = array[0];
+    }
+    for (i = 2; i < size; i++) {
+        if (array[i] < smallest) {
+        secondsmallest = smallest;
+        smallest = array[i];
+        }
+        else if (array[i] < secondsmallest) {
+            secondsmallest = array[i];
+        }
+    }
+    printf(" \nSecond smallest element is %d", secondsmallest);
+}
+
+Output:
+ 
+How many numbers you want to enter: 10
+ 
+Enter 10 numbers :  31 20 35 333 758 45 62 89 106 94
+ 
+Second smallest element is 31
+
+9. Write a program in C to read n number of values in an array and display it in reverse
+order. Take array values from the user.
+#include <stdio.h>
+
+void main()
+{
+   int i,n,a[100];
+   
+       printf("\n\nRead n number of values in an array and display it in reverse order:\n");
+       printf("------------------------------------------------------------------------\n");
+   
+   printf("Input the number of elements to store in the array :");
+   scanf("%d",&n);
+   
+   printf("Input %d number of elements in the array :\n",n);
+   for(i=0;i<n;i++)
+      {
+	  printf("element - %d : ",i);
+	  scanf("%d",&a[i]);
+	  }
+      
+   printf("\nThe values store into the array are : \n");
+   for(i=0;i<n;i++)
+     {
+	   printf("% 5d",a[i]);
+	 }
+ 
+   printf("\n\nThe values store into the array in reverse are :\n");
+   for(i=n-1;i>=0;i--)
+      {
+	   printf("% 5d",a[i]);
+	  }
+   printf("\n\n");
+} 
+
+Output:
+
+Read n number of values in an array and display it in reverse order:                                          
+------------------------------------------------------------------------                                      
+Input the number of elements to store in the array :3                                                         
+Input 3 number of elements in the array :                                                                     
+element - 0 : 2                                                                                               
+element - 1 : 5                                                                                               
+element - 2 : 7                                                                                               
+                                                                                                              
+The values store into the array are :                                                                         
+    2    5    7                                                                                               
+                                                                                                              
+The values store into the array in reverse are :                                                              
+    7    5    2
+
+
+10. Write a program in C to copy the elements of one array into another array.Take array
+values from the user.
+Ans.   #include <stdio.h>
+
+void main()
+{
+    int arr1[100], arr2[100];
+    int i, n;
+	
+	
+       printf("\n\nCopy the elements one array into another array :\n");
+       printf("----------------------------------------------------\n");
+	   
+       printf("Input the number of elements to be stored in the array :");
+       scanf("%d",&n);
+   
+       printf("Input %d elements in the array :\n",n);
+       for(i=0;i<n;i++)
+        {
+	      printf("element - %d : ",i);
+	      scanf("%d",&arr1[i]);
+	    }
+    /* Copy elements of first array into second array.*/ 
+    for(i=0; i<n; i++)
+    {
+        arr2[i] = arr1[i];
+    }
+
+    /* Prints the elements of first array   */
+    printf("\nThe elements stored in the first array are :\n");
+    for(i=0; i<n; i++)
+    {
+        printf("% 5d", arr1[i]);
+    }
+
+    /* Prints the elements copied into the second array. */
+    printf("\n\nThe elements copied into the second array are :\n");
+    for(i=0; i<n; i++)
+    {
+        printf("% 5d", arr2[i]);
+    }
+	       printf("\n\n");
+}
+
+Output:
+
+Copy the elements one array into another array :                                                              
+----------------------------------------------------                                                          
+Input the number of elements to be stored in the array :3                                                     
+Input 3 elements in the array :                                                                               
+element - 0 : 15                                                                                              
+element - 1 : 10                                                                                              
+element - 2 : 12                                                                                              
+                                                                                                              
+The elements stored in the first array are :                                                                  
+   15   10   12                                                                                               
+                                                                                                              
+The elements copied into the second array are :                                                               
+   15   10   12 
