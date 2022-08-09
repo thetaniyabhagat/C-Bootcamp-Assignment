@@ -11,7 +11,7 @@ int main() {
   int sum = 0, i; 
  
   for(i=0; i<10; i++) { 
-    printf( "Enter number : " ); 
+  printf(Enter numbers:\n);
     scanf( "%d", &intArray[i] ); 
     sum += intArray[i]; 
   } 
@@ -20,6 +20,19 @@ int main() {
  
   return 0; 
 } 
+Output:
+Enter numbers:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Total is 55
 2. Write a program to calculate the average of numbers stored in an array of size 10.
 Take array values from the user.
 Ans.  #include <stdio.h>
@@ -93,6 +106,7 @@ Ans.   #include <stdio.h>
     Greatest of ten numbers is %d", greatest);
     return 0;
   }
+  Output:
 Enter ten values: 2 53 65 3 88 8 14 5 77 64 Greatest of ten numbers is 88
 
 5. Write a program to find the smallest number stored in an array of size 10. Take array
