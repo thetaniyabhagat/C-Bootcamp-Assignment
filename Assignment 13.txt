@@ -80,11 +80,7 @@ int main()
     printf("%d",summation(n));
     return 0;
 }
-Output : 
- 
-
-5
-
+Output : 5
 5. Write a recursive function to calculate sum of digits of a given number
 Ans.    #include <stdio.h>
  
