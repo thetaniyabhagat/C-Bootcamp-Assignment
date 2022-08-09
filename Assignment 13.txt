@@ -1,0 +1,245 @@
+Assignment - 13 A Job Ready Bootcamp in C++, DSA and IOT MySirG
+
+More on Recursion in C Language
+
+1. Write a recursive function to calculate sum of first N natural numbers
+Ans. #include <include>
+ 
+// Returns sum of first
+// n natural numbers
+int recurSum(int n)
+{
+    if (n <= 1)
+        return n;
+    return n + recurSum(n - 1);
+}
+ 
+// Driver code
+int main()
+{
+    int n = 5;
+    printf("%d",recurSum(n));
+    return 0;
+}
+Output:
+15
+
+2. Write a recursive function to calculate sum of first N odd natural numbers
+Ans.  #include<stdio.h>
+int SumOdd(int num1, int num2)
+{
+   if(num1>num2)
+    return 0;
+return num1+SumOdd(num1+2,num2);
+}
+int main()
+{
+    int num1=1,num2;
+    printf("Enter your Limit:");
+    scanf("%d",&num2);
+    printf("Sum of all odd numbers in the given range is: %d",SumOdd(num1,num2));
+}
+Output:
+Enter your Limit:12
+Sum of all odd numbers in the given range is: 36
+
+3. Write a recursive function to calculate sum of first N odd natural numbers
+Ans.  #include<stdio.h>
+int SumOdd(int num1, int num2)
+{
+   if(num1>num2)
+    return 0;
+return num1+SumOdd(num1+2,num2);
+}
+int main()
+{
+    int num1=1,num2;
+    printf("Enter your Limit:");
+    scanf("%d",&num2);
+    printf("Sum of all odd numbers in the given range is: %d",SumOdd(num1,num2));
+}
+Output:
+Enter your Limit:12
+Sum of all odd numbers in the given range is: 36
+4. Write a recursive function to calculate sum of squares of first n natural numbers
+Ans.  #include <stdio.h>
+  
+// Function to calculate sum
+int summation(int n)
+{
+    int sum = 0;
+    for (int i = 1; i <= n; i++)
+        sum += (i * i);
+    return sum;
+}
+  
+// Driver code
+int main()
+{
+    int n = 2;
+    printf("%d",summation(n));
+    return 0;
+}
+Output : 
+ 
+
+5
+
+5. Write a recursive function to calculate sum of digits of a given number
+Ans.    #include <stdio.h>
+ 
+// Function to check sum of digit using recursion
+int sum_of_digit(int n)
+{
+    if (n == 0)
+       return 0;
+    return (n % 10 + sum_of_digit(n / 10));
+}
+ 
+// Driven Program to check above
+int main()
+{
+    int num = 12345;
+    int result = sum_of_digit(num);
+    printf("Sum of digits in %d is %d\n", num, result);
+    return 0;
+}
+Output: 
+
+Sum of digits in 12345 is 15
+6. Write a recursive function to calculate factorial of a given number
+Ans.   
+ /* Program Name: Find Factorial
+   Written by: Chaitanya Singh
+   Published on: beginnersbook.com
+ */
+#include<stdio.h>
+int find_factorial(int);
+int main()
+{
+   int num, fact;
+   //Ask user for the input and store it in num
+   printf("\nEnter any integer number:");
+   scanf("%d",&num);
+ 
+   //Calling our user defined function
+   fact =find_factorial(num);
+ 
+   //Displaying factorial of input number
+   printf("\nfactorial of %d is: %d",num, fact);
+   return 0;
+}
+int find_factorial(int n)
+{
+   //Factorial of 0 is 1 
+   if(n==0)
+      return(1);
+ 
+   //Function calling itself: recursion
+   return(n*find_factorial(n-1));
+}
+Output:
+
+Enter any integer number: 4
+factorial of 4 is: 24
+
+8. Write a recursive function to print first N terms of Fibonacci series
+Ans.  #include<stdio.h>    
+void printFibonacci(int n){    
+    static int n1=0,n2=1,n3;    
+    if(n>0){    
+         n3 = n1 + n2;    
+         n1 = n2;    
+         n2 = n3;    
+         printf("%d ",n3);    
+         printFibonacci(n-1);    
+    }    
+}    
+int main(){    
+    int n;    
+    printf("Enter the number of elements: ");    
+    scanf("%d",&n);    
+    printf("Fibonacci Series: ");    
+    printf("%d %d ",0,1);    
+    printFibonacci(n-2);//n-2 because 2 numbers are already printed    
+  return 0;  
+ }    
+Output:
+
+Enter the number of elements:15
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 
+
+9. Write a program in C to count the digits of a given number using recursion.
+Ans.  #include <stdio.h>
+ 
+//function to count digits
+int countDigits(int num)
+{
+    static int count=0;
+     
+    if(num>0)
+    {
+        count++;
+        countDigits(num/10);
+    }
+    else
+    {
+        return count;
+    }
+}
+int main()
+{
+    int number;
+    int count=0;
+     
+    printf("Enter a positive integer number: ");
+    scanf("%d",&number);
+     
+    count=countDigits(number);
+     
+    printf("Total digits in number %d is: %d\n",number,count);
+     
+    return 0;
+}
+Output
+
+Enter a positive integer number: 123
+Total digits in number 123 is: 3 
+
+10. Write a program in C to calculate the power of any number
+Ans.  
+#include <stdio.h>
+ 
+long int CalcuOfPower(int x,int y)
+{
+    long int result=1;
+    if(y == 0) return result;
+    result=x*(CalcuOfPower(x,y-1));  //calling the  function CalcuOfPower itself recursively
+}
+int main()
+{
+    int bNum,pwr;
+    long int result;
+    printf("\n\n Recursion : Calculate the power of any number :\n");
+	printf("----------------------------------------------------\n");	
+     
+    printf(" Input the base  value : ");
+    scanf("%d",&bNum);
+     
+    printf(" Input the value of power : ");
+    scanf("%d",&pwr);
+     
+    result=CalcuOfPower(bNum,pwr);//called the function CalcuOfPower
+     
+    printf(" The value of %d to the power of %d is : %ld\n\n",bNum,pwr,result);
+     
+    return 0;
+}
+
+Sample Output:
+
+ Recursion : Calculate the power of any number :                                                              
+----------------------------------------------------                                                          
+ Input the base  value : 2                                                                                    
+ Input the value of power : 6                                                                                 
+ The value of 2 to the power of 6 is : 64
