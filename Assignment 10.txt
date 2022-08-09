@@ -1,0 +1,228 @@
+Assignment - 10 A Job Ready Bootcamp in C++, DSA and IOT
+
+Functions in C Language
+1. Write a function to calculate the area of a circle.
+Ans. #include<stdio.h>
+float area(int r)
+{
+	return (22*r*r)/7;
+}
+int main()
+{
+	int r;
+	float a;
+	printf("enter radius of the circle: ");
+	scanf("%d",&r);
+        a=area(r); 
+	printf("area of the circle: %f\n",a);
+	return 0;
+}
+Output:
+enter radius of the circle: 7
+area of the circle: 154.00
+2.Write a function to calculate simple interest.
+Ans. #include<stdio.h>
+float Simple_int(float p, float r, float t) // function for finding simple interest
+{
+    float si;   
+    si = (p * r * t)/100; // formula
+    return si; // returning yhe value of si
+}
+ int main()
+{
+    float a,b,c;
+    float intrest;
+    printf("\nEnter Prinicpal :\t");
+    scanf("%f",&a);
+    printf("\nEnter year:\t");
+    scanf("%f",&b);
+    printf("\nEnter Rate:\t");
+    scanf("%f",&c); // taking all 3 values p,r and time
+    intrest = Simple_int(a,b,c); // passing value in function
+    printf("\nSimple Interest = %.2f\n", intrest); //output
+    printf("\n");
+    return 0;
+}
+Output:
+Enter Principal : 1000
+Enter year : 1
+Enter Rate : 10
+Simple Interest =100.00
+
+3. Write a function to check whether a given number is even or odd. Return 1 if the
+number is even, otherwise return 0. 
+Ans.#include <stdio.h>
+void checkEvenOdd(int N)
+{
+    // Find remainder
+    int r = N % 2;
+  
+    // Condition for even
+    if (r == 0) {
+        printf("Even");
+    }
+  
+    // Otherwise
+    else {
+        printf("Odd");
+    }
+}
+  
+// Driver Code
+int main()
+{
+    // Given number N
+    int N = 101;
+  
+    // Function Call
+    checkEvenOdd(N);
+  
+    return 0;
+}
+Output:
+Odd
+4. Write a function to print first N natural numbers 
+Ans. #include<stdio.h>  
+  
+void display(int);  
+  
+int main()  
+{  
+    int limit;  
+  
+    printf("Enter the number of terms to be printed\n");  
+    scanf("%d", &limit);  
+  
+    printf("\nNatural Numbers from 1 To %d are:", limit);  
+    display(limit);  
+  
+    return 0;  
+}  
+  
+void display(int num)  
+{  
+    if(num)  
+        display(num-1);  
+    else  
+        return;  
+  
+    printf("\n%d\n", num);  
+}  
+Output:
+Enter the number of terms to be printed
+14
+
+5. Write a function to print first N odd natural numbers. 
+#include <stdio.h>
+void main()
+{
+   int i,n;
+   printf("Input number of terms : ");
+   scanf("%d",&n);
+   printf("\nThe odd numbers are :");
+   
+   i = 1;
+	while (i <= n)
+	{
+		printf("%d ", 2 * i - 1);
+		i++;
+	}
+} 
+return 0;
+Output:
+Input number of terms : 10
+The odd numbers are :1 3 5 7 9 11 13 15 17 19
+
+6. Write a function to calculate the factorial of a number. 
+Ans. #include <stdio.h>
+
+int fact(int);
+
+void main()
+{
+	int no,factorial;
+ 
+  	printf("Enter a number to calculate it's factorial\n");
+  	scanf("%d",&no);
+  	factorial=fact(no);
+    printf("Factorial of the num(%d) = %d\n",no,factorial);
+//printf("Factorial of the num(%d) = %d\n",no,fact(no));//another way of calling a function//comment above two lines if you want to use this
+}
+
+int fact(int n)
+{
+    int i,f=1;
+    for(i=1;i<=n;i++)
+    {
+        f=f*i;
+    }
+    return f;
+}
+Output:
+Factorial of the num(5) = 120
+7. Write a function to calculate the number of combinations one can make from n items
+and r selected at a time. 
+8. Write a function to calculate the number of arrangements one can make from n items
+and r selected at a time. 
+9. Write a function to check whether a given number contains a given digit or not.
+Ans. #include<stdio.h>
+int main()
+{
+	int n,num,digit,rem;
+	scanf("%d %d",&num,&digit);
+	n=num;
+	while(num!=0)
+	{
+		rem=num%10;
+		if(rem==digit)
+		{
+			printf("%d is occured in %d",digit,n);
+			return 0;
+		}
+		num/=10;
+	}
+	printf("%d is not occured in %d",digit,n);
+	return 0;
+}
+Output:
+6372 3
+3 is occured in 6372
+10. Write a function to print all prime factors of a given number. For example, if the
+number is 36 then your result should be 2, 2, 3, 3.
+Ans. #include <math.h>
+#include <stdio.h>
+ 
+// A function to print all prime factors of a given number n
+void primeFactors(int n)
+{
+    // Print the number of 2s that divide n
+    while (n % 2 == 0) {
+        printf("%d ", 2);
+        n = n / 2;
+    }
+ 
+    // n must be odd at this point.  So we can skip
+    // one element (Note i = i +2)
+    for (int i = 3; i <= sqrt(n); i = i + 2) {
+        // While i divides n, print i and divide n
+        while (n % i == 0) {
+            printf("%d ", i);
+            n = n / i;
+        }
+    }
+ 
+    // This condition is to handle the case when n
+    // is a prime number greater than 2
+    if (n > 2)
+        printf("%d ", n);
+}
+ 
+/* Driver program to test above function */
+int main()
+{
+    int n = 315;
+    primeFactors(n);
+    return 0;
+}
+Output: 
+3 3 5 7
