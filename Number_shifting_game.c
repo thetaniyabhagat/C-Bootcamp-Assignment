@@ -284,11 +284,12 @@ int main()
            printf("\a               You have Won      \a\a\a ");
             printf("\033[0m");
          }
-         char check;
-          printf("\033[0;36m");
+        char check;
+        printf("\033[0;36m");
         printf("\nwant to play again ? \n");
         printf("enter 'y' to play again:  ");
-          printf("\033[0m");
+        printf("\033[0m");
+        fflush(stdin);
         scanf("%c",&check);
         if(check!='y' && check!='Y')
             break;
