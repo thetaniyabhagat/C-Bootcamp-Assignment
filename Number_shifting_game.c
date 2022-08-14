@@ -211,7 +211,7 @@ void gameRule(int arr[][4])
 int main()
 {
     int arr[4][4];        // matrix
-    int maxTry=5;       // maximum move
+    int maxTry=30;       // maximum move
     char name[20];
    system("cls");        // to clear screen
 
@@ -292,7 +292,7 @@ int main()
         scanf("%c",&check);
         if(check!='y' && check!='Y')
             break;
-        maxTry=5;
+        maxTry=30;
     }
     return 0;
 }
