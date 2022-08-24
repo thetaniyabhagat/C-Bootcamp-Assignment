@@ -1,0 +1,154 @@
+Assignment - 23 A Job Ready Bootcamp in C++, DSA and IOT 
+
+                                  Basics of C++
+
+Ans 1.  #include<iostream>
+        using namespace std;
+        int main()
+        {
+        cout<<Hello MySirG;
+        return 0;
+        }
+        
+ Ans 2.  #include<iostream>
+        using namespace std;
+        int main()
+        {
+        cout<<Hello<<endl<<MySirG;
+        return 0;
+        }
+        
+  Ans 3.#include<iostream>
+        using namespace std;
+        int main()
+        {
+        int a,b;
+        cout<<Enter two numbers;
+        cin>>a>>b;
+        cout<<endl<<"Sum of two numbers = "<<a+b;
+        return 0;
+        }
+
+ Ans 4 #include <iostream>
+        int main()
+      {
+    float radius, area;
+ 
+    std::cout << "Enter the radius of circle : ";
+    std::cin >> radius;
+    area = 3.14 * radius * radius;
+    std::cout << "Area of circle with radius "
+              << radius << " is " << area;
+      }
+
+
+ Ans 5.#include<iostream>
+#include<math.h>
+using namespace std;
+int main ()
+{
+float l,b,h,volume;
+cout<<"Enter Length:";
+cin>>l;
+cout<<"Enter width:";
+cin>>b;
+cout<<"Enter height:";
+cin>>h;
+volume=(l*b*h);
+cout<<endl<<"Volume of cuboid:"<<volume;
+
+return 0;
+}
+
+
+ Ans 6.#include <iostream>
+using namespace std;
+ 
+int main() {
+   int num_1;
+   cout << "Enter num_1 : ";
+   cin >> num_1;
+ 
+   int num_2;
+   cout << "Enter num_2 : ";
+   cin >> num_2;
+ 
+   int num_3;
+   cout << "Enter num_3 : ";
+   cin >> num_3;
+    
+   float average = (num_1 + num_2 + num_3) / 3;
+   cout << "Average : " << average << endl;
+}
+
+
+ Ans 7.#include <iostream>
+using namespace std;
+int main(){
+    int n, square;
+    
+    // Asking for input
+    cout << "Enter a number: ";
+    cin >> n;
+    
+    // Calculating square
+    square = n * n;
+    
+    // Displaying output
+    cout << "Square of " << n << " is: " << square;
+    
+    return 0;
+} 
+
+
+ Ans 8.#include <iostream>  
+using namespace std;  
+int main()  
+{  
+int a=5, b=10;      
+cout<<"Before swap a= "<<a<<" b= "<<b<<endl;      
+a=a*b; //a=50 (5*10)    
+b=a/b; //b=5 (50/10)    
+a=a/b; //a=10 (50/5)    
+cout<<"After swap a= "<<a<<" b= "<<b<<endl;      
+return 0;  
+}  
+
+ Ans 9.#include <iostream>
+using namespace std;
+int main(){
+    int x, y;
+    
+    // Asking for input
+    cout << "Enter the first number: ";
+    cin >> x;
+    cout << "Enter the second number: ";
+    cin >> y;
+    
+    if (x > y){
+        cout << x << " is greater than " << y;
+    }
+    else if (y > x){
+        cout << y << " is greater than " << x;
+    }
+    else{
+        cout << "Both are equal";
+    }
+    return 0;
+}
+
+ Ans 10.#include<iostream>
+
+using namespace std;
+int main()
+{
+   int arr[10], i, sum=0;
+   cout<<"Enter 10 Array Elements: ";
+   for(i=0; i<10; i++)
+      cin>>arr[i];
+   for(i=0; i<10; i++)
+      sum = sum+arr[i];
+   cout<<"\nSum of all array elements = "<<sum;
+   cout<<endl;
+   return 0;
+}
